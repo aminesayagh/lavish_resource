@@ -1,5 +1,5 @@
 <div>
-  <h3>Hey there</h3>
+  <h3>Hey there <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/></h3>
   <h1>Ressource Lavish v1 Project</h1>
   <div>
     <h2>Packages</h2>
