@@ -27,3 +27,7 @@
     }
     @content;
 }
+
+// @include flex(('none': ('col', 14),'lg': ('row', 2), 'xl': ('row', 8), '2xl': ('row', 12))){
+//     @apply items-stretch;
+// }

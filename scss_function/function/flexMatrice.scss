@@ -43,3 +43,32 @@
 
     @content;
 }
+// @include flexMatrice(('none': ('col', 12, 2), 'sm': ('col', 12, 2),'md': ('row', 2, 3),'lg': ('col', 12, 2), '2xl': ('col', 16, 3)),3);
+
+
+@mixin images($list, $children){
+    @each $breakpoint, $values in $list{
+        $b: break($breakpoint);
+        $row: nth($values, 1);
+        $gap: nth($values, 2);
+        $line: nth($values, 3);
+        $cols: $children / $row;
+        .users_container{
+            @apply #{$b}grid-rows-#{$row} #{$b}grid-cols-#{$cols}  #{$b}gap-#{$gap};
+        }
+        
+        $cmp: 1;
+        @for $i from 1 through $children{
+            .user_container:nth-child(#{$i}){
+                $num: ($cmp * $gap) * $line;
+                $cmp: $cmp + 1;
+                @apply #{$b}mt-[-#{$num}px] #{$b}mb-[#{$num}px];
+                @if $i % $cols == 0 {
+                    $cmp: 1;
+                }
+            }
+        }
+    }
+}
+
+// @include images(('none': (6, 4, 10),'sm': (4, 8, 2),'md': (3, 6, 2),'lg': (3, 6, 3) ,'xl': (2, 6, 3)), 12);

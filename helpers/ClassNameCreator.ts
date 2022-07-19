@@ -25,3 +25,13 @@ interface Style {
   }
   
   export default styleClasseesNameGenerator;
+
+// component.tsx
+
+// style
+// import StyleNameGestion from 'lib/ClassNameCreator'
+// import ValuesStyle from './Values.module.scss'
+// const cg = StyleNameGestion(ValuesStyle)
+
+// <div className={cg('content1 content2', 'container')}></div>
+// .container_content1 .container_content2 // as next.js module

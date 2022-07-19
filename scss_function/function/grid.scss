@@ -18,3 +18,10 @@
 
     @content;
 }
+
+// @include grid(('none': (2, 11),"xs": (3, 10), 'sm': (4, 8) ,"lg": (3, 9), "xl":( 4, 7),'2xl': (3, 9)), 'col'){
+//     @apply grid-cols-12;
+// };
+// @include grid(('none': (2, 4),"xs": (2, 4)), "row"){
+//     @apply grid-rows-6;
+// };
