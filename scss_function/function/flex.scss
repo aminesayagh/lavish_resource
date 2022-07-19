@@ -1,0 +1,29 @@
+@use "sass:list";
+
+@import './break.scss';
+
+@mixin flex($list){
+    @each $breakpoint ,$values in $list{
+        $direction: nth($values, 1);
+        $space: nth($values, 2);
+        $axe: y;
+        $other_axe: x;
+        @if $direction == row {
+            $axe: x;
+            $other_axe: y;
+        }
+        @apply flex;
+        @if $breakpoint == none {
+            @apply flex-#{$direction};
+            @if $space > 0 {
+                @apply space-#{$axe}-#{$space} space-#{$other_axe}-0;
+            }
+        } @else {
+            @apply #{$breakpoint}:flex-#{$direction};
+            @if $space > 0 {
+                @apply #{$breakpoint}:space-#{$axe}-#{$space} #{$breakpoint}:space-#{$other_axe}-0;
+            }
+        }
+    }
+    @content;
+}

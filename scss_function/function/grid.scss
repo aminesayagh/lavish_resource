@@ -1,0 +1,20 @@
+@use "sass:list";
+
+@mixin grid($list, $direction) {
+
+    @each $breakpoint,
+    $values in $list {
+        $start: nth($values, 1);
+        $span: nth($values, 2);
+
+        @if $breakpoint==none {
+            @apply #{$direction}-start-#{$start} #{$direction}-span-#{$span};
+        }
+
+        @else {
+            @apply #{$breakpoint}:#{$direction}-start-#{$start} #{$breakpoint}:#{$direction}-span-#{$span};
+        }
+    }
+
+    @content;
+}
